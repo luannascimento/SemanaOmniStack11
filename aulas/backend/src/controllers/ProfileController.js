@@ -4,7 +4,7 @@ module.exports ={
         const ong_id = request.headers.alou;
         const incidents = await connection('incidents')
         .where('ong_id',ong_id)
-        .select('*').first();
+        .select('*');
     
         return response.json(incidents);
     }
