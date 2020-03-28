@@ -3,7 +3,6 @@
     "name": "By The Hero",
     "slug": "bythehero",
     "privacy": "public",
-    "sdkVersion": "36.0.0",
     "platforms": [
       "ios",
       "android",
