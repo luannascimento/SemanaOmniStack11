@@ -12,10 +12,10 @@ describe('ONG',()=>{
        await conection.destroy();
 
     });
-    it('should be able to create a new ONG',async()=>{
+    it('Should be able to create a new ONG',async()=>{
         const response = await request(app)
         .post('/ongs')
-        //.set('alou','asas')
+        //.set('authorization','asas')
         .send({            
                 name:"junior",
                 email:"contato@mail.com",

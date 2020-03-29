@@ -9,7 +9,7 @@ export default function Detail(){
     const navigation = useNavigation();
     const route = useRoute();
     const incident = route.params.incident;
-    const message = 'Olá APAD, estou entrando em contato pois gostaria de ajudar no caso "Cadelinha Atropelada" com o valor de R$120,00';
+    const message = `Olá ${incident.name}, estou entrando em contato, pois gostaria de ajudar no caso “${incident.titulo}” com o valor de R$120,00.`;
  
 //  alert(incident[0].name); 
    function navigateBack(){
@@ -26,7 +26,7 @@ export default function Detail(){
 
     }
     function sendWhatsapp(){
-        Linking.openURL(`whatsapp://send?phone=${incident.whatsapp}&text=${message}`);
+        Linking.openURL(`whatsapp://send?phone=${incident.whatsapp}text=${message}`);
 
 
     }
@@ -51,7 +51,7 @@ export default function Detail(){
             </View>
             <View  style={styles.contactBox}>
                 <Text style={styles.heroTitle}>Salve o Dia!</Text> 
-                <Text style={styles.heroTitle}>Seja o heroi desse caso.!</Text>  
+                <Text style={styles.heroTitle}>Seja o herói desse caso!</Text>  
                 <Text style={styles.heroDescription}>Entre em Contato:</Text>                     
      
             <View  style={styles.actions}>

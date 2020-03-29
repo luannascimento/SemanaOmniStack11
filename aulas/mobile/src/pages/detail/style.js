@@ -67,6 +67,16 @@ export default StyleSheet.create({
         color:'#FFF',
         fontSize:15,
         fontWeight:'bold'
-    }
+    }  ,  incidentProperty:{
+        fontSize:14,
+        color:'#41414d',
+        fontWeight:'bold',
+    },
+    incidentValue:{
+        marginTop:20,
+        fontSize:15,
+        marginBottom:24,
+        color:'#737380',
+    },
 
 });

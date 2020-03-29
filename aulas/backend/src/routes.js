@@ -6,14 +6,17 @@ const ProfileController = require('./controllers/ProfileController');
 const SessionController = require('./controllers/SessionController');
 const routes = express.Router();
 routes.post('/sessions',celebrate({
-    [Segments.HEADERS]: Joi.object({
-        Authorization:Joi.string().required(),
-    }).unknown(),
+  
+    [Segments.BODY]: Joi.object().keys({
+        id: Joi.string().required()
+      
+
+    }),
 }),SessionController.index);
 routes.get('/ongs',OngController.index);
 routes.get('/profile',celebrate({
     [Segments.HEADERS]: Joi.object({
-        Authorization:Joi.string().required(),
+        authorization:Joi.string().required(),
     }).unknown(),
 }),ProfileController.index);
 routes.post('/ongs',celebrate({
@@ -34,7 +37,7 @@ routes.get('/incidents',celebrate({
 routes.post('/incidents',
 celebrate({
     [Segments.HEADERS]: Joi.object({
-        Authorization:Joi.string().required(),
+        authorization:Joi.string().required(),
     }).unknown(),
 
     [Segments.BODY]: Joi.object().keys({

@@ -14,13 +14,14 @@ export default function Logon(){
         const data={
             id,           
         };
+        
       try{
         const response = await api.post('sessions',{id});
        localStorage.setItem('ongId',id);
        localStorage.setItem('ongName',response.data.name);
         history.push('/profile');
       }catch(err){
-          alert(`Erro ao cadastar `);
+          alert(`Não foi encontrado ONG com id Correspondente!`);
       }
         
     }
@@ -36,7 +37,7 @@ export default function Logon(){
                     onChange={e=>setId(e.target.value)}           
                />
                <button className="button" type="submit">Entrar</button>
-               <Link className="back-link" to="/register"><FiLogIn size={16} color="#Es02041"/>Nao tenho Cadastro</Link>
+               <Link className="back-link" to="/register"><FiLogIn size={16} color="#Es02041"/>Não tenho Cadastro!</Link>
            </form>
            </section>
            <img src={heroesImg} alt="Heroes"/>

@@ -12,7 +12,7 @@ export default function Profile(){
     useEffect(()=>{
         api.get('profile',{
             headers:{
-                alou:ongId,
+                authorization:ongId,
             }
         }).then(response=>{
             setIncidents(response.data);
@@ -23,7 +23,7 @@ export default function Profile(){
         try{
             await api.delete(`incidents/${id}`,{
                 headers:{
-                    alou:ongId,
+                    authorization:ongId,
                 }
             });
             setIncidents(incidents.filter(incident=>incident.id!== id));
